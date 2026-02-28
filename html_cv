@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiktor Kuranowski - Data & BI Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base & Reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f1f5f9; 
+            color: #334155; 
+            line-height: 1.6; 
+            padding: 2rem 1rem; 
+        }
+        
+        /* Main Container */
+        .cv-container { 
+            max-width: 1050px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            display: flex; 
+            flex-direction: row; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+            border-radius: 12px; 
+            overflow: hidden; 
+        }
+        
+        /* Left Column - Sidebar */
+        .sidebar { 
+            width: 33%; 
+            background-color: #1e293b; /* Ciemny, elegancki granat */
+            color: #f8fafc; 
+            padding: 3rem 2.5rem; 
+        }
+        .sidebar h2 { 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            margin-bottom: 1.5rem; 
+            color: #94a3b8; 
+            border-bottom: 1px solid #334155; 
+            padding-bottom: 0.5rem; 
+            margin-top: 2.5rem; 
+        }
+        .sidebar h2:first-child { margin-top: 0; }
+        
+        /* Sidebar Lists */
+        .info-list { list-style: none; }
+        .info-list li { margin-bottom: 1.2rem; font-size: 0.95rem; word-break: break-word; }
+        .info-list a { color: #38bdf8; text-decoration: none; transition: color 0.2s; font-weight: 500;}
+        .info-list a:hover { color: #7dd3fc; }
+        
+        .skills-list { list-style: none; }
+        .skills-list li { 
+            margin-bottom: 0.75rem; 
+            font-size: 0.95rem; 
+            display: flex; 
+            align-items: center; 
+        }
+        .skills-list li::before { 
+            content: '▹'; 
+            color: #38bdf8; 
+            margin-right: 0.75rem; 
+            font-weight: bold; 
+            font-size: 1.2rem;
+        }
+
+        .course-item { margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.4; color: #cbd5e1; }
+        .course-item strong { color: #f8fafc; display: block; font-weight: 500; }
+        
+        /* Right Column - Main Content */
+        .main-content { 
+            width: 67%; 
+            padding: 4rem; 
+        }
+        
+        /* Header */
+        .header-section { margin-bottom: 3.5rem; }
+        .name { 
+            font-size: 3.2rem; 
+            font-weight: 700; 
+            color: #0f172a; 
+            line-height: 1.1; 
+            margin-bottom: 0.5rem; 
+            letter-spacing: -0.03em; 
+        }
+        .job-title { 
+            font-size: 1.2rem; 
+            font-weight: 500; 
+            color: #0284c7; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+        
+        /* Sections */
+        .section-title { 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            color: #0f172a; 
+            margin-bottom: 2rem; 
+            display: flex; 
+            align-items: center; 
+        }
+        .section-title::after { 
+            content: ''; 
+            flex: 1; 
+            height: 2px; 
+            background-color: #e2e8f0; 
+            margin-left: 1rem; 
+        }
+        
+        .profile-text { 
+            font-size: 1.05rem; 
+            color: #475569; 
+            margin-bottom: 3rem; 
+            text-align: justify; 
+            line-height: 1.7;
+        }
+        
+        /* Timeline for Experience & Education */
+        .timeline { 
+            border-left: 2px solid #e2e8f0; 
+            padding-left: 2rem; 
+            margin-bottom: 3rem; 
+        }
+        .timeline-item { 
+            position: relative; 
+            margin-bottom: 2.5rem; 
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -2rem; 
+            top: 0.4rem; 
+            transform: translateX(-50%); 
+            width: 14px; 
+            height: 14px; 
+            border-radius: 50%; 
+            background-color: #0284c7; 
+            border: 3px solid #ffffff; 
+            box-shadow: 0 0 0 2px #e2e8f0; 
+        }
+        
+        .item-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: baseline; 
+            margin-bottom: 0.25rem; 
+        }
+        .item-company { 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            color: #0f172a; 
+        }
+        .item-date { 
+            font-size: 0.9rem; 
+            color: #64748b; 
+            font-weight: 500; 
+            background: #f1f5f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+        }
+        .item-title { 
+            font-size: 1.05rem; 
+            font-weight: 600; 
+            color: #0284c7; 
+            margin-bottom: 0.75rem; 
+        }
+        .item-desc { 
+            font-size: 0.95rem; 
+            color: #475569; 
+            line-height: 1.6;
+        }
+        
+        /* Tech Stack Tags */
+        .tech-tags { 
+            margin-top: 1rem; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 0.5rem; 
+        }
+        .tech-tag { 
+            background-color: #f1f5f9; 
+            color: #475569; 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            padding: 0.3rem 0.8rem; 
+            border-radius: 6px; 
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 850px) {
+            .cv-container { flex-direction: column; }
+            .sidebar { width: 100%; padding: 2.5rem 2rem; }
+            .main-content { width: 100%; padding: 2.5rem 2rem; }
+            .item-header { flex-direction: column; }
+            .item-date { margin-top: 0.5rem; display: inline-block; }
+            .name { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    
+    <aside class="sidebar">
+        <h2>Kontakt</h2>
+        <ul class="info-list">
+            <li>📧 <a href="mailto:wiktorkuranowski@gmail.com">wiktorkuranowski@gmail.com</a></li>
+            <li>📱 500 706 819</li>
+            <li>💼 <a href="https://linkedin.com/in/wiktorkuranowski" target="_blank">linkedin.com/in/wiktorkuranowski</a></li>
+            <li>📍 Warszawa, Polska</li>
+        </ul>
+
+        <h2>Umiejętności IT</h2>
+        <ul class="skills-list">
+            <li>SQL & BigQuery</li>
+            <li>Power BI & Looker</li>
+            <li>Google Cloud (GCP)</li>
+            <li>Python</li>
+            <li>Pipedrive CRM</li>
+            <li>Kissflow & Trello</li>
+            <li>Google Workspace</li>
+        </ul>
+
+        <h2>Kompetencje Miękkie</h2>
+        <ul class="skills-list">
+            <li>Myślenie analityczne</li>
+            <li>Praca zespołowa</li>
+            <li>Odpowiedzialność</li>
+            <li>Kreatywność</li>
+        </ul>
+
+        <h2>Języki</h2>
+        <ul class="skills-list">
+            <li>Język Angielski - C1</li>
+        </ul>
+
+        <h2>Kursy i Licencje</h2>
+        <div class="course-item">
+            <strong>Big Data and Machine Learning Fundamentals</strong>
+            Google Cloud
+        </div>
+        <div class="course-item">
+            <strong>SQL Fundamentals</strong>
+            DataCamp
+        </div>
+        <div class="course-item">
+            <strong>Exploring and Preparing your Data</strong>
+            BigQuery
+        </div>
+        <div class="course-item">
+            <strong>Umiejętności Jutra 2.0</strong>
+        </div>
+        <div class="course-item">
+            <strong>Szkoła Giełdowa</strong>
+            Podstawy Inwestowania
+        </div>
+        <div class="course-item" style="margin-top: 1.5rem; border-top: 1px solid #334155; padding-top: 1rem;">
+            <strong>✈️ Licencja Samolotowa (PPL-A)</strong>
+            Prywatna pasja
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="header-section">
+            <h1 class="name">Wiktor<br>Kuranowski</h1>
+            <div class="job-title">Data & BI Analyst</div>
+        </header>
+
+        <section>
+            <h3 class="section-title">Profil Zawodowy</h3>
+            <p class="profile-text">
+                Jestem odpowiedzialnym analitykiem, stale rozwijającym swoje kompetencje w obszarze danych i Business Intelligence. Wnoszę do zespołu analityczne myślenie, zaangażowanie i dbałość o najwyższe standardy. Od kilku lat pasjonuję się również lotnictwem, co ukształtowało we mnie dyscyplinę i otwartość na nowe wyzwania.
+            </p>
+        </section>
+
+        <section>
+            <h3 class="section-title">Doświadczenie Zawodowe</h3>
+            
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <div class="item-company">OCHK</div>
+                        <div class="item-date">9 miesięcy</div>
+                    </div>
+                    <div class="item-title">Asystent Analityka Biznesowego</div>
+                    <div class="item-desc">
+                        Tworzyłem analizy w BigQuery, wspierałem automatyzację procesów biznesowych oraz rozwój raportów. Brałem aktywny udział w projekcie poprawy jakości danych w CRM, ściśle współpracując z działem sprzedaży w celu zachowania spójności i wiarygodności danych do decyzji biznesowych. Opracowywałem i optymalizowałem procesy firmowe w narzędziu Kissflow.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">BigQuery</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">CRM</span>
+                        <span class="tech-tag">Kissflow</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <div class="item-company">OCHK</div>
+                        <div class="item-date">5 miesięcy</div>
+                    </div>
+                    <div class="item-title">Stażysta w dziale BI</div>
+                    <div class="item-desc">
+                        Tworzyłem i rozwijałem raporty w Power BI. Integrowałem oraz weryfikowałem dane z różnych źródeł, pisząc wydajne zapytania SQL w BigQuery, przygotowując zestawy danych do końcowej wizualizacji.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">BigQuery</span>
+                        <span class="tech-tag">Google Sheets</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <div class="item-company">OCHK</div>
+                        <div class="item-date">1 miesiąc</div>
+                    </div>
+                    <div class="item-title">Stażysta w dziale Data & AI</div>
+                    <div class="item-desc">
+                        Wspierałem zespół w analizie i tworzeniu dokumentacji projektowej. Stawiałem pierwsze kroki w pracy z BigQuery, SQL, Lookerem oraz poznawałem narzędzia oparte na sztucznej inteligencji, w tym środowisko Vertex AI.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Vertex AI</span>
+                        <span class="tech-tag">Looker</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Edukacja</h3>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <div class="item-company">Szkoła Główna Handlowa w Warszawie (SGH)</div>
+                        <div class="item-date">Obecnie - 2027</div>
+                    </div>
+                    <div class="item-title">Advanced Analytics - Big Data</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <div class="item-company">Akademia Leona Koźmińskiego</div>
+                        <div class="item-date">2022 - 2025</div>
+                    </div>
+                    <div class="item-title">Management & AI</div>
+                    <div class="item-desc">
+                        <strong>Ocena końcowa:</strong> Bardzo dobra (5)<br>
+                        <strong>Praca dyplomowa:</strong> <em>The role of data visualization in qualitative business decision making</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
