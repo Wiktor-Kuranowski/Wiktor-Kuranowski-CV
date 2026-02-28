@@ -10,11 +10,11 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #f1f5f9; /* Bardzo delikatny szary/niebieski w tle */
+            background-color: #f1f5f9; 
             color: #334155; 
             line-height: 1.65; 
             padding: 3rem 1rem 5rem 1rem; 
-            -webkit-font-smoothing: antialiased; /* Wyostrzanie czcionek */
+            -webkit-font-smoothing: antialiased; 
             -moz-osx-font-smoothing: grayscale;
         }
         
@@ -31,7 +31,7 @@
         .btn-download {
             display: inline-flex;
             align-items: center;
-            background-color: #0284c7; /* Głęboki, analityczny niebieski */
+            background-color: #0284c7; 
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
@@ -201,7 +201,7 @@
             border-radius: 50%; 
             background-color: #ffffff; 
             border: 3px solid #0284c7; 
-            box-shadow: 0 0 0 4px #ffffff; /* Clean cutout effect */
+            box-shadow: 0 0 0 4px #ffffff; 
             z-index: 1;
         }
         
@@ -272,7 +272,7 @@
             .action-bar { justify-content: center; }
         }
 
-        /* PRINT STYLES - Optymalizacja do generowania PDF z przeglądarki */
+        /* PRINT STYLES */
         @media print {
             body { 
                 background-color: #ffffff; 
@@ -282,7 +282,7 @@
                 print-color-adjust: exact;
             }
             .wrapper { max-width: 100%; margin: 0; }
-            .action-bar { display: none; /* Ukryj przycisk pobierania na wydruku */ }
+            .action-bar { display: none; }
             .cv-container { 
                 box-shadow: none; 
                 border: none; 
@@ -383,7 +383,7 @@
             <section>
                 <h3 class="section-title">Profil Zawodowy</h3>
                 <p class="profile-text">
-                    [cite_start]Jestem odpowiedzialnym analitykiem, stale rozwijającym swoje kompetencje w obszarze danych i Business Intelligence[cite: 6, 7]. [cite_start]Wnoszę do zespołu analityczne myślenie, zaangażowanie i dbałość o najwyższe standardy[cite: 7]. [cite_start]Od kilku lat pasjonuję się również lotnictwem, co ukształtowało we mnie dyscyplinę i otwartość na nowe wyzwania[cite: 6, 7].
+                    Jestem odpowiedzialnym analitykiem, stale rozwijającym swoje kompetencje w obszarze danych i Business Intelligence. Wnoszę do zespołu analityczne myślenie, zaangażowanie i dbałość o najwyższe standardy. Od kilku lat pasjonuję się również lotnictwem, co ukształtowało we mnie dyscyplinę i otwartość na nowe wyzwania.
                 </p>
             </section>
 
@@ -399,7 +399,7 @@
                         </div>
                         <div class="item-title">Asystent Analityka Biznesowego</div>
                         <div class="item-desc">
-                            [cite_start]Tworzyłem analizy w BigQuery, wspierałem automatyzację procesów biznesowych oraz rozwój raportów[cite: 25]. [cite_start]Brałem aktywny udział w projekcie poprawy jakości danych w CRM, ściśle współpracując z działem sprzedaży w celu zachowania spójności i wiarygodności danych do decyzji biznesowych[cite: 26]. [cite_start]Opracowywałem i optymalizowałem procesy firmowe w narzędziu Kissflow[cite: 27].
+                            Tworzyłem analizy w BigQuery, wspierałem automatyzację procesów biznesowych oraz rozwój raportów. Brałem aktywny udział w projekcie poprawy jakości danych w CRM, ściśle współpracując z działem sprzedaży w celu zachowania spójności i wiarygodności danych do decyzji biznesowych. Opracowywałem i optymalizowałem procesy firmowe w narzędziu Kissflow.
                         </div>
                         <div class="tech-tags">
                             <span class="tech-tag">BigQuery</span>
@@ -416,7 +416,7 @@
                         </div>
                         <div class="item-title">Stażysta w dziale BI</div>
                         <div class="item-desc">
-                            [cite_start]Tworzyłem i rozwijałem raporty w Power BI[cite: 30]. [cite_start]Integrowałem oraz weryfikowałem dane z różnych źródeł, pisząc wydajne zapytania SQL w BigQuery, przygotowując zestawy danych do końcowej wizualizacji[cite: 30]. [cite_start]Rozwinąłem umiejętności automatyzacji procesów oraz pracy z Google Sheets[cite: 31].
+                            Tworzyłem i rozwijałem raporty w Power BI. Integrowałem oraz weryfikowałem dane z różnych źródeł, pisząc wydajne zapytania SQL w BigQuery, przygotowując zestawy danych do końcowej wizualizacji. Rozwinąłem umiejętności automatyzacji procesów oraz pracy z Google Sheets.
                         </div>
                         <div class="tech-tags">
                             <span class="tech-tag">Power BI</span>
@@ -433,7 +433,7 @@
                         </div>
                         <div class="item-title">Stażysta w dziale Data & AI</div>
                         <div class="item-desc">
-                            [cite_start]Wspierałem zespół w analizie i tworzeniu dokumentacji projektowej[cite: 33]. [cite_start]Stawiałem pierwsze kroki w pracy z BigQuery, SQL, Lookerem oraz poznawałem narzędzia oparte na sztucznej inteligencji, w tym środowisko Vertex AI[cite: 34].
+                            Wspierałem zespół w analizie i tworzeniu dokumentacji projektowej. Stawiałem pierwsze kroki w pracy z BigQuery, SQL, Lookerem oraz poznawałem narzędzia oparte na sztucznej inteligencji, w tym środowisko Vertex AI.
                         </div>
                         <div class="tech-tags">
                             <span class="tech-tag">Vertex AI</span>
@@ -455,6 +455,11 @@
                             <div class="item-date">Obecnie - 2027</div>
                         </div>
                         <div class="item-title">Advanced Analytics - Big Data</div>
+                        <div class="item-desc">
+                            <strong>Organizacja studiów:</strong><br>
+                            • Semestr I: Studia stacjonarne (ścieżka anglojęzyczna)<br>
+                            • Od semestru II: Studia niestacjonarne (ścieżka polskojęzyczna)
+                        </div>
                     </div>
 
                     <div class="timeline-item">
@@ -464,8 +469,9 @@
                         </div>
                         <div class="item-title">Management & AI</div>
                         <div class="item-desc">
-                            [cite_start]<strong>Ocena końcowa:</strong> Bardzo dobra (5) [cite: 17]<br>
-                            [cite_start]<strong>Praca dyplomowa:</strong> <em>The role of data visualization in qualitative business decision making</em> [cite: 18, 19, 20]
+                            <strong>Organizacja studiów:</strong> Studia w całości w języku angielskim<br>
+                            <strong>Ocena końcowa:</strong> Bardzo dobra (5)<br>
+                            <strong>Praca dyplomowa:</strong> <em>The role of data visualization in qualitative business decision making</em>
                         </div>
                     </div>
                 </div>
