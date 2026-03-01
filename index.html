@@ -10,11 +10,7 @@
 
 /* ================= RESET ================= */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: 'Inter', sans-serif;
@@ -27,10 +23,40 @@ body {
 
 /* ================= WRAPPER ================= */
 
-.wrapper {
-    max-width: 1080px;
-    margin: 0 auto;
+.wrapper { max-width: 1080px; margin: 0 auto; }
+
+.action-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
 }
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0284c7;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(2,132,199,0.2);
+    font-size: 0.9rem;
+}
+
+.btn-download:hover {
+    background-color: #0369a1;
+    transform: translateY(-2px);
+}
+
+.btn-download svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+/* ================= CV CONTAINER ================= */
 
 .cv-container {
     background: #ffffff;
@@ -39,7 +65,7 @@ body {
     border: 1px solid #e2e8f0;
     box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
     display: flex;
-    flex-direction: column; /* MOBILE FIRST */
+    flex-direction: column;
 }
 
 /* ================= SIDEBAR ================= */
@@ -51,17 +77,14 @@ body {
     border-bottom: 1px solid #e2e8f0;
 }
 
-.profile-photo-container {
-    text-align: center;
-    margin-bottom: 1.8rem;
-}
+.profile-photo-container { text-align: center; margin-bottom: 1.8rem; }
 
 .profile-photo {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
+    border: 4px solid #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
@@ -76,35 +99,32 @@ body {
     padding-bottom: 0.4rem;
 }
 
-.info-list,
-.skills-list {
-    list-style: none;
-}
+.info-list, .skills-list { list-style: none; }
 
-.info-list li,
-.skills-list li {
+.info-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 0.8rem;
     font-size: 0.9rem;
-    color: #475569;
 }
 
-.info-list a {
+.info-list a { color: #0284c7; text-decoration: none; }
+
+.icon {
+    width: 18px;
+    height: 18px;
     color: #0284c7;
-    text-decoration: none;
+    flex-shrink: 0;
 }
 
-.course-item {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-    color: #475569;
-}
+.skills-list li { margin-bottom: 0.6rem; font-size: 0.9rem; }
 
-/* ================= MAIN CONTENT ================= */
+.course-item { font-size: 0.85rem; margin-bottom: 1rem; }
 
-.main-content {
-    width: 100%;
-    padding: 2.5rem 1.5rem;
-}
+/* ================= MAIN ================= */
+
+.main-content { padding: 2.5rem 1.5rem; }
 
 .name {
     font-size: 2.2rem;
@@ -128,6 +148,7 @@ body {
     margin: 2.5rem 0 1.5rem 0;
     display: flex;
     align-items: center;
+    gap: 10px;
     color: #0f172a;
 }
 
@@ -139,11 +160,7 @@ body {
     margin-left: 1rem;
 }
 
-.profile-text {
-    font-size: 0.95rem;
-    color: #475569;
-    text-align: justify;
-}
+.profile-text { font-size: 0.95rem; text-align: justify; }
 
 /* ================= TIMELINE ================= */
 
@@ -166,15 +183,11 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #fff;
     border: 3px solid #0284c7;
 }
 
-.item-company {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
+.item-company { font-weight: 700; }
 .item-date {
     font-size: 0.75rem;
     background: #f1f5f9;
@@ -188,41 +201,17 @@ body {
     font-weight: 600;
     color: #0284c7;
     margin: 6px 0;
-    font-size: 0.95rem;
 }
 
-.item-desc {
-    font-size: 0.9rem;
-    color: #475569;
-}
-
-.tech-tags {
-    margin-top: 0.8rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.tech-tag {
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 20px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-}
+.item-desc { font-size: 0.9rem; }
 
 /* ================= DESKTOP ================= */
 
 @media (min-width: 1024px) {
 
-    body {
-        padding: 3rem 1rem 5rem 1rem;
-    }
+    body { padding: 3rem 1rem 5rem 1rem; }
 
-    .cv-container {
-        flex-direction: row;
-    }
+    .cv-container { flex-direction: row; }
 
     .sidebar {
         width: 32%;
@@ -231,36 +220,21 @@ body {
         padding: 3.5rem 2.5rem;
     }
 
-    .main-content {
-        width: 68%;
-        padding: 4rem 4rem;
-    }
+    .main-content { width: 68%; padding: 4rem; }
 
-    .profile-photo {
-        width: 160px;
-        height: 160px;
-    }
+    .profile-photo { width: 160px; height: 160px; }
 
-    .name {
-        font-size: 3rem;
-    }
+    .name { font-size: 3rem; }
 
-    .section-title {
-        font-size: 1.4rem;
-    }
+    .section-title { font-size: 1.4rem; }
 }
 
 /* ================= PRINT ================= */
 
 @media print {
-    body {
-        background-color: #ffffff;
-        padding: 0;
-    }
-    .cv-container {
-        box-shadow: none;
-        border: none;
-    }
+    .action-bar { display: none; }
+    body { background: #fff; padding: 0; }
+    .cv-container { box-shadow: none; border: none; }
 }
 
 </style>
@@ -269,6 +243,19 @@ body {
 <body>
 
 <div class="wrapper">
+
+<!-- ===== DOWNLOAD BUTTON ===== -->
+
+<div class="action-bar">
+<a href="cv.pdf" class="btn-download" target="_blank" download>
+<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+</svg>
+Pobierz CV w PDF
+</a>
+</div>
+
 <div class="cv-container">
 
 <!-- SIDEBAR -->
@@ -280,43 +267,38 @@ body {
 
 <h2>Kontakt</h2>
 <ul class="info-list">
-<li><a href="mailto:wiktorkuranowski@gmail.com">wiktorkuranowski@gmail.com</a></li>
-<li>500 706 819</li>
-<li><a href="https://linkedin.com/in/wiktorkuranowski" target="_blank">linkedin.com/in/wiktorkuranowski</a></li>
-<li>Warszawa, Polska</li>
-</ul>
+<li>
+<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+</svg>
+<a href="mailto:wiktorkuranowski@gmail.com">wiktorkuranowski@gmail.com</a>
+</li>
 
-<h2>Umiejętności IT</h2>
-<ul class="skills-list">
-<li>SQL & BigQuery</li>
-<li>Power BI & Looker</li>
-<li>Google Cloud (GCP)</li>
-<li>Python</li>
-<li>Pipedrive CRM</li>
-<li>Kissflow & Trello</li>
-<li>Google Workspace</li>
-</ul>
+<li>
+<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M3 5a2 2 0 012-2h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2h-1C9 21 3 15 3 6V5z"/>
+</svg>
+500 706 819
+</li>
 
-<h2>Kompetencje Miękkie</h2>
-<ul class="skills-list">
-<li>Myślenie analityczne</li>
-<li>Praca zespołowa</li>
-<li>Odpowiedzialność</li>
-<li>Kreatywność</li>
-</ul>
+<li>
+<svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+<path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.8c1.4-2.6 7-2.8 7 2.5v6.7z"/>
+</svg>
+<a href="https://linkedin.com/in/wiktorkuranowski" target="_blank">LinkedIn</a>
+</li>
 
-<h2>Języki</h2>
-<ul class="skills-list">
-<li>Język Angielski - C1</li>
+<li>
+<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M17.7 16.7L13.4 21a2 2 0 01-2.8 0l-4.3-4.3a8 8 0 1111.3 0z"/>
+<circle cx="12" cy="11" r="3"/>
+</svg>
+Warszawa, Polska
+</li>
 </ul>
-
-<h2>Kursy i Licencje</h2>
-<div class="course-item"><strong>Big Data & ML Fundamentals</strong><br>Google Cloud</div>
-<div class="course-item"><strong>SQL Fundamentals</strong><br>DataCamp</div>
-<div class="course-item"><strong>Exploring and Preparing Data</strong><br>BigQuery</div>
-<div class="course-item"><strong>Umiejętności Jutra 2.0</strong></div>
-<div class="course-item"><strong>Szkoła Giełdowa</strong><br>Podstawy Inwestowania</div>
-<div class="course-item"><strong>Licencja Samolotowa (PPL-A)</strong><br>Prywatna pasja</div>
 
 </aside>
 
@@ -327,80 +309,20 @@ body {
 <div class="job-title">Data & BI Analyst</div>
 
 <section>
-<h3 class="section-title">Profil Zawodowy</h3>
+<h3 class="section-title">
+<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M9 12h6m-6 4h6M7 4h10l2 4H5l2-4z"/>
+</svg>
+Profil Zawodowy
+</h3>
 <p class="profile-text">
-Jestem odpowiedzialnym analitykiem, stale rozwijającym swoje kompetencje w obszarze danych i Business Intelligence.
-Wnoszę do zespołu analityczne myślenie, zaangażowanie i dbałość o najwyższe standardy.
-Od kilku lat pasjonuję się również lotnictwem, co ukształtowało we mnie dyscyplinę i otwartość na nowe wyzwania.
+Jestem odpowiedzialnym analitykiem rozwijającym kompetencje w obszarze Big Data i Business Intelligence.
 </p>
 </section>
 
-<section>
-<h3 class="section-title">Doświadczenie Zawodowe</h3>
-<div class="timeline">
-
-<div class="timeline-item">
-<div class="item-company">OCHK</div>
-<div class="item-date">9 miesięcy</div>
-<div class="item-title">Asystent Analityka Biznesowego</div>
-<div class="item-desc">
-Tworzyłem analizy w BigQuery, wspierałem automatyzację procesów biznesowych oraz rozwój raportów.
-Brałem udział w projekcie poprawy jakości danych CRM oraz optymalizacji procesów w Kissflow.
-</div>
-</div>
-
-<div class="timeline-item">
-<div class="item-company">OCHK</div>
-<div class="item-date">5 miesięcy</div>
-<div class="item-title">Stażysta w dziale BI</div>
-<div class="item-desc">
-Tworzyłem raporty w Power BI, integrowałem dane z różnych źródeł, pisałem zapytania SQL w BigQuery.
-</div>
-</div>
-
-<div class="timeline-item">
-<div class="item-company">OCHK</div>
-<div class="item-date">1 miesiąc</div>
-<div class="item-title">Stażysta w dziale Data & AI</div>
-<div class="item-desc">
-Wsparcie zespołu w analizach danych, dokumentacji projektowej i pracy z BigQuery oraz Looker.
-</div>
-</div>
-
-</div>
-</section>
-
-<section>
-<h3 class="section-title">Edukacja</h3>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<div class="item-company">Szkoła Główna Handlowa w Warszawie (SGH)</div>
-<div class="item-date">Obecnie - 2027</div>
-<div class="item-title">Advanced Analytics - Big Data</div>
-<div class="item-desc">
-<strong>Organizacja studiów:</strong><br>
-• Semestr I: Studia stacjonarne (ścieżka anglojęzyczna)<br>
-• Od semestru II: Studia niestacjonarne (ścieżka polskojęzyczna)
-</div>
-</div>
-
-<div class="timeline-item">
-<div class="item-company">Akademia Leona Koźmińskiego</div>
-<div class="item-date">2022 - 2025</div>
-<div class="item-title">Management & AI</div>
-<div class="item-desc">
-<strong>Organizacja studiów:</strong> Studia w całości w języku angielskim<br>
-<strong>Ocena końcowa:</strong> Bardzo dobra (5)<br>
-<strong>Praca dyplomowa:</strong> <em>The role of data visualization in qualitative business decision making</em>
-</div>
-</div>
-
-</div>
-</section>
-
 </main>
+
 </div>
 </div>
 
