@@ -8,9 +8,7 @@
 
 <style>
 
-/* ============================= */
-/* RESET */
-/* ============================= */
+/* ================= RESET ================= */
 
 * {
     box-sizing: border-box;
@@ -20,16 +18,14 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #f1f5f9;
+    background-color: #f1f5f9;
     color: #334155;
-    line-height: 1.6;
+    line-height: 1.65;
     padding: 2rem 1rem 4rem 1rem;
     -webkit-font-smoothing: antialiased;
 }
 
-/* ============================= */
-/* WRAPPER */
-/* ============================= */
+/* ================= WRAPPER ================= */
 
 .wrapper {
     max-width: 1080px;
@@ -42,26 +38,22 @@ body {
     overflow: hidden;
     border: 1px solid #e2e8f0;
     box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
-    
-    /* MOBILE FIRST */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* MOBILE FIRST */
 }
 
-/* ============================= */
-/* SIDEBAR (MOBILE) */
-/* ============================= */
+/* ================= SIDEBAR ================= */
 
 .sidebar {
     width: 100%;
-    background: #f8fafc;
+    background-color: #f8fafc;
     padding: 2rem 1.5rem;
     border-bottom: 1px solid #e2e8f0;
 }
 
 .profile-photo-container {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
 }
 
 .profile-photo {
@@ -69,8 +61,8 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
 .sidebar h2 {
@@ -101,13 +93,13 @@ body {
     text-decoration: none;
 }
 
-.info-list a:hover {
-    text-decoration: underline;
+.course-item {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    color: #475569;
 }
 
-/* ============================= */
-/* MAIN CONTENT */
-/* ============================= */
+/* ================= MAIN CONTENT ================= */
 
 .main-content {
     width: 100%;
@@ -125,8 +117,8 @@ body {
     font-size: 0.95rem;
     font-weight: 600;
     color: #0284c7;
-    letter-spacing: 2px;
     text-transform: uppercase;
+    letter-spacing: 2px;
     margin-top: 0.5rem;
 }
 
@@ -143,18 +135,17 @@ body {
     content: '';
     flex: 1;
     height: 1px;
-    background: #e2e8f0;
+    background-color: #e2e8f0;
     margin-left: 1rem;
 }
 
 .profile-text {
     font-size: 0.95rem;
     color: #475569;
+    text-align: justify;
 }
 
-/* ============================= */
-/* TIMELINE */
-/* ============================= */
+/* ================= TIMELINE ================= */
 
 .timeline {
     border-left: 2px solid #e2e8f0;
@@ -175,13 +166,13 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: white;
+    background-color: #ffffff;
     border: 3px solid #0284c7;
 }
 
 .item-company {
-    font-weight: 700;
     font-size: 1rem;
+    font-weight: 700;
 }
 
 .item-date {
@@ -221,9 +212,7 @@ body {
     border: 1px solid #e2e8f0;
 }
 
-/* ============================= */
-/* DESKTOP */
-/* ============================= */
+/* ================= DESKTOP ================= */
 
 @media (min-width: 1024px) {
 
@@ -261,13 +250,11 @@ body {
     }
 }
 
-/* ============================= */
-/* PRINT */
-/* ============================= */
+/* ================= PRINT ================= */
 
 @media print {
     body {
-        background: #fff;
+        background-color: #ffffff;
         padding: 0;
     }
     .cv-container {
@@ -284,6 +271,7 @@ body {
 <div class="wrapper">
 <div class="cv-container">
 
+<!-- SIDEBAR -->
 <aside class="sidebar">
 
 <div class="profile-photo-container">
@@ -294,7 +282,7 @@ body {
 <ul class="info-list">
 <li><a href="mailto:wiktorkuranowski@gmail.com">wiktorkuranowski@gmail.com</a></li>
 <li>500 706 819</li>
-<li><a href="https://linkedin.com/in/wiktorkuranowski" target="_blank">LinkedIn</a></li>
+<li><a href="https://linkedin.com/in/wiktorkuranowski" target="_blank">linkedin.com/in/wiktorkuranowski</a></li>
 <li>Warszawa, Polska</li>
 </ul>
 
@@ -302,66 +290,104 @@ body {
 <ul class="skills-list">
 <li>SQL & BigQuery</li>
 <li>Power BI & Looker</li>
-<li>Google Cloud</li>
+<li>Google Cloud (GCP)</li>
 <li>Python</li>
 <li>Pipedrive CRM</li>
+<li>Kissflow & Trello</li>
+<li>Google Workspace</li>
 </ul>
 
-<h2>Kompetencje</h2>
+<h2>Kompetencje Miękkie</h2>
 <ul class="skills-list">
-<li>Analityczne myślenie</li>
+<li>Myślenie analityczne</li>
 <li>Praca zespołowa</li>
 <li>Odpowiedzialność</li>
+<li>Kreatywność</li>
 </ul>
+
+<h2>Języki</h2>
+<ul class="skills-list">
+<li>Język Angielski - C1</li>
+</ul>
+
+<h2>Kursy i Licencje</h2>
+<div class="course-item"><strong>Big Data & ML Fundamentals</strong><br>Google Cloud</div>
+<div class="course-item"><strong>SQL Fundamentals</strong><br>DataCamp</div>
+<div class="course-item"><strong>Exploring and Preparing Data</strong><br>BigQuery</div>
+<div class="course-item"><strong>Umiejętności Jutra 2.0</strong></div>
+<div class="course-item"><strong>Szkoła Giełdowa</strong><br>Podstawy Inwestowania</div>
+<div class="course-item"><strong>Licencja Samolotowa (PPL-A)</strong><br>Prywatna pasja</div>
 
 </aside>
 
+<!-- MAIN -->
 <main class="main-content">
 
 <h1 class="name">Wiktor Kuranowski</h1>
 <div class="job-title">Data & BI Analyst</div>
 
 <section>
-<h3 class="section-title">Profil</h3>
+<h3 class="section-title">Profil Zawodowy</h3>
 <p class="profile-text">
-Analityk rozwijający kompetencje w obszarze Big Data i Business Intelligence. 
-Skoncentrowany na jakości danych, automatyzacji procesów i budowie raportów wspierających decyzje biznesowe.
+Jestem odpowiedzialnym analitykiem, stale rozwijającym swoje kompetencje w obszarze danych i Business Intelligence. 
+Wnoszę do zespołu analityczne myślenie, zaangażowanie i dbałość o najwyższe standardy.
 </p>
 </section>
 
 <section>
-<h3 class="section-title">Doświadczenie</h3>
-
+<h3 class="section-title">Doświadczenie Zawodowe</h3>
 <div class="timeline">
 
 <div class="timeline-item">
 <div class="item-company">OCHK</div>
-<div class="item-date">2024 - obecnie</div>
+<div class="item-date">9 miesięcy</div>
 <div class="item-title">Asystent Analityka Biznesowego</div>
 <div class="item-desc">
-Analizy w BigQuery, optymalizacja procesów, poprawa jakości danych CRM.
-</div>
-<div class="tech-tags">
-<span class="tech-tag">BigQuery</span>
-<span class="tech-tag">SQL</span>
-<span class="tech-tag">Power BI</span>
+Tworzyłem analizy w BigQuery, wspierałem automatyzację procesów oraz rozwój raportów.
 </div>
 </div>
 
 <div class="timeline-item">
 <div class="item-company">OCHK</div>
-<div class="item-date">2023 - 2024</div>
+<div class="item-date">5 miesięcy</div>
 <div class="item-title">Stażysta BI</div>
 <div class="item-desc">
-Tworzenie raportów Power BI, integracja danych, zapytania SQL.
+Tworzyłem i rozwijałem raporty w Power BI, integrowałem dane z różnych źródeł.
 </div>
+</div>
+
+<div class="timeline-item">
+<div class="item-company">OCHK</div>
+<div class="item-date">1 miesiąc</div>
+<div class="item-title">Stażysta Data & AI</div>
+<div class="item-desc">
+Wspierałem zespół w analizach i dokumentacji projektowej.
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h3 class="section-title">Edukacja</h3>
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="item-company">SGH</div>
+<div class="item-date">Obecnie - 2027</div>
+<div class="item-title">Advanced Analytics - Big Data</div>
+</div>
+
+<div class="timeline-item">
+<div class="item-company">Akademia Leona Koźmińskiego</div>
+<div class="item-date">2022 - 2025</div>
+<div class="item-title">Management & AI</div>
 </div>
 
 </div>
 </section>
 
 </main>
-
 </div>
 </div>
 
