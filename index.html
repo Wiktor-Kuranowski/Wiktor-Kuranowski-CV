@@ -3,238 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wiktor Kuranowski - Data & BI Analyst</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>CV - Twoje Imię</title>
 
 <style>
 
-/* ================= RESET ================= */
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
+/* BODY */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f1f5f9;
-    color: #334155;
-    line-height: 1.65;
-    padding: 2rem 1rem 4rem 1rem;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    color: #333;
 }
 
-/* ================= WRAPPER ================= */
-
-.wrapper { max-width: 1080px; margin: 0 auto; }
-
-.action-bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1.5rem;
-}
-
-.btn-download {
-    display: inline-flex;
-    align-items: center;
-    background-color: #0284c7;
-    color: #fff;
+/* PDF BUTTON */
+.download-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0d47a1;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    padding: 0.6rem 1.4rem;
-    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(2,132,199,0.2);
-    font-size: 0.9rem;
+    z-index: 1000;
 }
 
-.btn-download:hover {
-    background-color: #0369a1;
-    transform: translateY(-2px);
+.download-btn:hover {
+    background: #1565c0;
 }
 
-.btn-download svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
-}
-
-/* ================= CV CONTAINER ================= */
-
+/* CONTAINER */
 .cv-container {
-    background: #ffffff;
+    max-width: 1100px;
+    margin: 80px auto;
+    display: flex;
+    background: white;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* ================= SIDEBAR ================= */
-
+/* SIDEBAR */
 .sidebar {
-    width: 100%;
-    background-color: #f8fafc;
-    padding: 2rem 1.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    width: 32%;
+    background: #0d47a1;
+    color: white;
+    padding: 40px 30px;
 }
-
-.profile-photo-container { text-align: center; margin-bottom: 1.8rem; }
 
 .profile-photo {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    background: white;
+    margin: 0 auto 30px;
 }
 
-.sidebar h2 {
-    font-size: 0.85rem;
-    font-weight: 700;
+.sidebar h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 2rem 0 1rem 0;
-    color: #64748b;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 0.4rem;
 }
 
-.info-list, .skills-list { list-style: none; }
-
-.info-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0.8rem;
-    font-size: 0.9rem;
+.sidebar p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-.info-list a { color: #0284c7; text-decoration: none; }
-
-.icon {
-    width: 18px;
-    height: 18px;
-    color: #0284c7;
-    flex-shrink: 0;
+/* MAIN */
+.main-content {
+    width: 68%;
+    padding: 40px;
 }
-
-.skills-list li { margin-bottom: 0.6rem; font-size: 0.9rem; }
-
-.course-item { font-size: 0.85rem; margin-bottom: 1rem; }
-
-/* ================= MAIN ================= */
-
-.main-content { padding: 2.5rem 1.5rem; }
 
 .name {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #0f172a;
-    line-height: 1.1;
+    font-size: 36px;
+    font-weight: 700;
 }
 
-.job-title {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #0284c7;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 0.5rem;
+.title {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 .section-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 2.5rem 0 1.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #0f172a;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0d47a1;
 }
 
-.section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: #e2e8f0;
-    margin-left: 1rem;
-}
-
-.profile-text { font-size: 0.95rem; text-align: justify; }
-
-/* ================= TIMELINE ================= */
-
-.timeline {
-    border-left: 2px solid #e2e8f0;
-    padding-left: 1.5rem;
-}
-
+/* TIMELINE */
 .timeline-item {
-    position: relative;
-    margin-bottom: 2.5rem;
+    margin-bottom: 25px;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1.5rem;
-    top: 4px;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 3px solid #0284c7;
+.item-company {
+    font-weight: 600;
 }
 
-.item-company { font-weight: 700; }
 .item-date {
-    font-size: 0.75rem;
-    background: #f1f5f9;
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-top: 4px;
+    font-size: 14px;
+    color: #777;
 }
 
 .item-title {
-    font-weight: 600;
-    color: #0284c7;
-    margin: 6px 0;
+    font-weight: 500;
+    margin: 5px 0;
 }
 
-.item-desc { font-size: 0.9rem; }
+.item-desc {
+    font-size: 14px;
+    line-height: 1.6;
+}
 
-/* ================= DESKTOP ================= */
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #0d47a1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 5px 5px 0 0;
+    font-size: 13px;
+}
 
-@media (min-width: 1024px) {
-
-    body { padding: 3rem 1rem 5rem 1rem; }
-
-    .cv-container { flex-direction: row; }
-
-    .sidebar {
-        width: 32%;
-        border-bottom: none;
-        border-right: 1px solid #e2e8f0;
-        padding: 3.5rem 2.5rem;
+/* MOBILE */
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
     }
-
-    .main-content { width: 68%; padding: 4rem; }
-
-    .profile-photo { width: 160px; height: 160px; }
-
-    .name { font-size: 3rem; }
-
-    .section-title { font-size: 1.4rem; }
-}
-
-/* ================= PRINT ================= */
-
-@media print {
-    .action-bar { display: none; }
-    body { background: #fff; padding: 0; }
-    .cv-container { box-shadow: none; border: none; }
+    .sidebar, .main-content {
+        width: 100%;
+    }
+    .name {
+        font-size: 26px;
+    }
 }
 
 </style>
@@ -242,86 +157,102 @@ body {
 
 <body>
 
-<div class="wrapper">
-
-<!-- ===== DOWNLOAD BUTTON ===== -->
-
-<div class="action-bar">
-<a href="cv.pdf" class="btn-download" target="_blank" download>
-<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-</svg>
-Pobierz CV w PDF
-</a>
-</div>
+<a href="cv.pdf" class="download-btn">⬇ Pobierz PDF</a>
 
 <div class="cv-container">
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
+<div class="sidebar">
 
-<div class="profile-photo-container">
-<img src="profile.png" alt="Wiktor Kuranowski" class="profile-photo">
+<div class="profile-photo"></div>
+
+<h3>Kontakt</h3>
+<p>
+<!-- email icon -->
+<svg width="14" height="14" fill="white" viewBox="0 0 24 24">
+<path d="M2 4h20v16H2z"/>
+</svg>
+ twojmail@email.com
+</p>
+
+<p>
+<!-- phone icon -->
+<svg width="14" height="14" fill="white" viewBox="0 0 24 24">
+<path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.3 11.3 0 003.6.6 1 1 0 011 1V21a1 1 0 01-1 1C10.3 22 2 13.7 2 3a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.6 3.6 1 1 0 01-.24 1z"/>
+</svg>
+ +48 000 000 000
+</p>
+
+<h3>Umiejętności</h3>
+<div class="skills">
+<span>Python</span>
+<span>SQL</span>
+<span>Power BI</span>
+<span>Data Visualization</span>
+<span>Machine Learning</span>
 </div>
 
-<h2>Kontakt</h2>
-<ul class="info-list">
-<li>
-<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-</svg>
-<a href="mailto:wiktorkuranowski@gmail.com">wiktorkuranowski@gmail.com</a>
-</li>
+<h3>Języki</h3>
+<p>Polski — Native</p>
+<p>Angielski — C1</p>
 
-<li>
-<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-d="M3 5a2 2 0 012-2h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2h-1C9 21 3 15 3 6V5z"/>
-</svg>
-500 706 819
-</li>
+</div>
 
-<li>
-<svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-<path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.8c1.4-2.6 7-2.8 7 2.5v6.7z"/>
-</svg>
-<a href="https://linkedin.com/in/wiktorkuranowski" target="_blank">LinkedIn</a>
-</li>
+<div class="main-content">
 
-<li>
-<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-d="M17.7 16.7L13.4 21a2 2 0 01-2.8 0l-4.3-4.3a8 8 0 1111.3 0z"/>
-<circle cx="12" cy="11" r="3"/>
-</svg>
-Warszawa, Polska
-</li>
-</ul>
-
-</aside>
-
-<!-- MAIN -->
-<main class="main-content">
-
-<h1 class="name">Wiktor Kuranowski</h1>
-<div class="job-title">Data & BI Analyst</div>
+<div class="name">Twoje Imię Nazwisko</div>
+<div class="title">Data Analyst | Business Intelligence</div>
 
 <section>
-<h3 class="section-title">
-<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-d="M9 12h6m-6 4h6M7 4h10l2 4H5l2-4z"/>
-</svg>
-Profil Zawodowy
-</h3>
-<p class="profile-text">
-Jestem odpowiedzialnym analitykiem rozwijającym kompetencje w obszarze Big Data i Business Intelligence.
-</p>
+<h3 class="section-title">Doświadczenie</h3>
+
+<div class="timeline-item">
+<div class="item-company">Nazwa Firmy</div>
+<div class="item-date">2023 - obecnie</div>
+<div class="item-title">Data Analyst</div>
+<div class="item-desc">
+Opis stanowiska, projekty, osiągnięcia, konkretne wyniki.
+</div>
+</div>
+
 </section>
 
-</main>
+<section>
+<h3 class="section-title">Edukacja</h3>
+
+<div class="timeline-item">
+<div class="item-company">Szkoła Główna Handlowa w Warszawie (SGH)</div>
+<div class="item-date">Obecnie - 2027</div>
+<div class="item-title">Advanced Analytics - Big Data</div>
+<div class="item-desc">
+Semestr I: Studia stacjonarne (anglojęzyczne)<br>
+Od semestru II: Niestacjonarne (polskojęzyczne)
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="item-company">Akademia Leona Koźmińskiego</div>
+<div class="item-date">2022 - 2025</div>
+<div class="item-title">Management & AI</div>
+<div class="item-desc">
+Studia w całości w języku angielskim<br>
+Ocena końcowa: 5.0<br>
+Praca: The role of data visualization in qualitative business decision making
+</div>
+</div>
+
+</section>
+
+<section>
+<h3 class="section-title">Projekty</h3>
+
+<div class="timeline-item">
+<div class="item-company">Dashboard sprzedażowy</div>
+<div class="item-desc">
+Power BI dashboard analizujący sprzedaż i marżę.
+</div>
+</div>
+
+</section>
 
 </div>
 </div>
